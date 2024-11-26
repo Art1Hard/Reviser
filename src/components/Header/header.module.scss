@@ -1,0 +1,60 @@
+@use "../../assets/scss/colors";
+
+.root {
+	padding: 20px 0;
+	background-color: colors.$primary;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.logo {
+	font-weight: 900;
+	font-size: 24px;
+	color: colors.$secondly;
+	text-decoration: none;
+}
+
+.nav {
+	display: flex;
+	column-gap: 25px;
+	font-size: 18px;
+}
+
+.link {
+	position: relative;
+	color: colors.$secondly;
+	text-decoration: none;
+	transition: color 0.15s ease-in-out;
+
+	&::after {
+		content: "";
+		content: "";
+		position: absolute;
+		bottom: -5px;
+		right: 0;
+		height: 2px;
+		width: 0;
+		background-color: #2980b9;
+		transition: width 0.2s ease-in-out;
+	}
+
+	&:hover {
+		color: #2980b9;
+	}
+
+	&.active {
+		color: #2980b9;
+
+		&::after {
+			width: 100%;
+			left: 0;
+		}
+	}
+}
